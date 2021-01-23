@@ -313,10 +313,10 @@ def train(model, device, config, epochs=5, batch_size=1, save_cp=True, log_step=
     logging.info(f'''Starting training:
         Epochs:          {epochs}
         Batch size:      {config.batch}
+        Validation size: {n_val}
         Subdivisions:    {config.subdivisions}
         Learning rate:   {config.learning_rate}
         Training size:   {n_train}
-        Validation size: {n_val}
         Checkpoints:     {save_cp}
         Device:          {device.type}
         Images size:     {config.width}
@@ -325,6 +325,8 @@ def train(model, device, config, epochs=5, batch_size=1, save_cp=True, log_step=
         Train label path:{config.train_label}
         Pretrained:
     ''')
+
+    # Validation size: {n_val}
 
     # learning rate setup
     def burnin_schedule(i):
@@ -541,7 +543,7 @@ def get_args(**kwargs):
                         help='dataset dir', dest='dataset_dir')
     parser.add_argument('-pretrained', type=str, default=None, help='pretrained yolov4.conv.137')
     parser.add_argument('-classes', type=int, default=80, help='dataset classes')
-    parser.add_argument('-train_label_path', dest='train_label', type=str, default='train.txt', help="train label path")
+    parser.add_argument('-train_label_path', dest='train_label', type=str, default='train1.txt', help="train label path")
     parser.add_argument(
         '-optimizer', type=str, default='adam',
         help='training optimizer',
