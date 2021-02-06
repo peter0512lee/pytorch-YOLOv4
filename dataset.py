@@ -434,7 +434,7 @@ def get_image_id(filename:str) -> int:
     # return int(lv+no)
 
     image_id = os.path.splitext(os.path.basename(filename))[0]
-    print(image_id)
+    # print(image_id)
     return int(image_id)
 
 

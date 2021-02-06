@@ -26,10 +26,10 @@ Cfg.cfgfile = os.path.join(_BASE_DIR, 'cfg', 'yolov4-custom.cfg')
 Cfg.pretrained = './yolov4.conv.137.pth'
 Cfg.classes = 10
 
-Cfg.batch = 32
-Cfg.subdivisions = 16
-Cfg.width = 608
-Cfg.height = 608
+Cfg.batch = 64      # 64
+Cfg.subdivisions = 32       # 32
+Cfg.width = 160      # 608
+Cfg.height = 160     # 608
 Cfg.channels = 3
 Cfg.momentum = 0.949
 Cfg.decay = 0.0005
@@ -40,8 +40,8 @@ Cfg.hue = .1
 
 Cfg.learning_rate = 0.00261
 Cfg.burn_in = 1000
-Cfg.max_batches = 30000
-Cfg.steps = [24000, 27000]
+Cfg.max_batches = 20000
+Cfg.steps = [16000, 18000]
 Cfg.policy = Cfg.steps
 Cfg.scales = .1, .1
 
@@ -57,8 +57,8 @@ Cfg.flip = 1
 Cfg.blur = 0
 Cfg.gaussian = 0
 Cfg.boxes = 60  # box num
-Cfg.TRAIN_EPOCHS = 5
-Cfg.train_label = os.path.join(_BASE_DIR, 'data', 'train1.txt')
+Cfg.TRAIN_EPOCHS = 100
+Cfg.train_label = os.path.join(_BASE_DIR, 'data', 'train.txt')
 Cfg.val_label = os.path.join(_BASE_DIR, 'data' ,'val1.txt')
 Cfg.TRAIN_OPTIMIZER = 'adam'
 '''

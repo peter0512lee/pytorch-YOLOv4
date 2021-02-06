@@ -131,8 +131,8 @@ class Yolo_loss(nn.Module):
     def __init__(self, n_classes=80, n_anchors=3, device=None, batch=2):
         super(Yolo_loss, self).__init__()
         self.device = device
-        self.strides = [8, 16, 32]
-        image_size = 608
+        self.strides = [8, 16, 32]      # [8, 16, 32]
+        image_size = 160                # 608
         self.n_classes = n_classes
         self.n_anchors = n_anchors
 
@@ -543,7 +543,7 @@ def get_args(**kwargs):
                         help='dataset dir', dest='dataset_dir')
     parser.add_argument('-pretrained', type=str, default=None, help='pretrained yolov4.conv.137')
     parser.add_argument('-classes', type=int, default=80, help='dataset classes')
-    parser.add_argument('-train_label_path', dest='train_label', type=str, default='train1.txt', help="train label path")
+    parser.add_argument('-train_label_path', dest='train_label', type=str, default='train.txt', help="train label path")
     parser.add_argument(
         '-optimizer', type=str, default='adam',
         help='training optimizer',
